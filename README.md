@@ -48,3 +48,30 @@ Ans:
       }      
     }
     ```
+
+    
+  3Q: How to find the GCD(Greatest Common Divisor) of two numbers using recursion?
+  Ans: GCD is the largest positive integer that divides the numbers without a remainder
+    Euclidean Algorithm
+
+    gcd(48/18);
+    Step 1: 48/18 = 2 remainder 12
+    Step 2: 18/12 = 1 remainder 6
+    Step 3 : 12/16 = 2 remainder 0
+
+      gcd(a,0) = a // Always come, we will return base value
+      gcd(a,b) = gcd(b,a mod b)
+    
+    ```
+    
+    def gcd(a, b):
+    assert int(a) == a and int(b) == b, 'The numbers must be integer only!'
+    if a < 0:
+        a = -1 * a
+    if b < 0:
+        b = -1 * b
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a%b)
+    ```
